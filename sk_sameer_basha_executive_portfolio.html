@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SK Sameer Basha | Data Engineering, AI & Product Strategy Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Crisp Executive Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            950: '#080D1A',
+                            900: '#0F172A',
+                            800: '#1E293B',
+                            700: '#334155',
+                        },
+                        cobalt: {
+                            600: '#2563EB',
+                            700: '#1D4ED8',
+                            50: '#EFF6FF',
+                        },
+                        gold: {
+                            600: '#D97706',
+                            500: '#F59E0B',
+                            100: '#FEF3C7',
+                            50: '#FFFBEB',
+                        },
+                        alabaster: '#F8FAFC'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom subtle scrollbar and modal transitions */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F8FAFC;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #CBD5E1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94A3B8;
+        }
+        .card-hover {
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+        }
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white !important; }
+        }
+    </style>
+</head>
+<body class="bg-alabaster text-navy-900 font-sans antialiased selection:bg-cobalt-600 selection:text-white">
+
+    <!-- Toast Notification for Copy Actions -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 bg-navy-900 text-white px-5 py-3.5 rounded-xl shadow-2xl border border-navy-700 flex items-center gap-3 pointer-events-none">
+        <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+            <i class="fa-solid fa-check text-xs"></i>
+        </div>
+        <span id="toast-message" class="text-sm font-medium">Copied to clipboard!</span>
+    </div>
+
+    <!-- Sticky Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 sm:h-20">
+                <!-- Brand / Name -->
+                <a href="#about" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-navy-900 text-white font-display font-bold text-lg flex items-center justify-center tracking-tight shadow-sm group-hover:bg-cobalt-600 transition-colors">
+                        SB
+                    </div>
+                    <div>
+                        <span class="font-display font-bold text-navy-900 text-base sm:text-lg tracking-tight block leading-none">SK SAMEER BASHA</span>
+                        <span class="text-[11px] font-medium text-slate-500 tracking-wider uppercase mt-1 block">Data Engineering &amp; Product Strategy</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#about" class="text-sm font-medium text-slate-600 hover:text-navy-900 transition-colors">About</a>
+                    <a href="#featured" class="text-sm font-medium text-slate-600 hover:text-navy-900 transition-colors flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-gold-600"></span>
+                        Featured Project
+                    </a>
+                    <a href="#projects" class="text-sm font-medium text-slate-600 hover:text-navy-900 transition-colors">All Projects (9)</a>
+                    <a href="#credentials" class="text-sm font-medium text-slate-600 hover:text-navy-900 transition-colors">Experience &amp; Credentials</a>
+                    <a href="#contact" class="text-sm font-medium text-slate-600 hover:text-navy-900 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Action Buttons -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <a href="https://github.com/basha27" target="_blank" rel="noopener noreferrer" class="p-2.5 text-slate-600 hover:text-navy-900 hover:bg-slate-100 rounded-xl transition-colors" title="GitHub Profile">
+                        <i class="fa-brands fa-github text-lg"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/sameerbashashaik07" target="_blank" rel="noopener noreferrer" class="p-2.5 text-slate-600 hover:text-cobalt-600 hover:bg-cobalt-50 rounded-xl transition-colors" title="LinkedIn Profile">
+                        <i class="fa-brands fa-linkedin-in text-lg"></i>
+                    </a>
+                    <button onclick="window.print()" class="ml-1 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-navy-900 hover:bg-cobalt-600 text-white text-sm font-semibold shadow-sm transition-all">
+                        <i class="fa-solid fa-print text-xs"></i>
+                        <span>Print / Save PDF</span>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2.5 rounded-xl text-slate-600 hover:text-navy-900 hover:bg-slate-100 focus:outline-none" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-200 px-4 pt-3 pb-5 space-y-2 shadow-lg">
+            <a href="#about" class="mobile-link block px-3 py-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-navy-900">About</a>
+            <a href="#featured" class="mobile-link block px-3 py-2.5 rounded-xl text-sm font-medium text-gold-600 bg-gold-50/60">Featured: Project SAHAJ</a>
+            <a href="#projects" class="mobile-link block px-3 py-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-navy-900">All Projects (9)</a>
+            <a href="#credentials" class="mobile-link block px-3 py-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-navy-900">Experience &amp; Credentials</a>
+            <a href="#contact" class="mobile-link block px-3 py-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-navy-900">Contact</a>
+            <div class="pt-2 border-t border-slate-100 flex items-center gap-3 px-3">
+                <a href="https://www.linkedin.com/in/sameerbashashaik07" target="_blank" rel="noopener noreferrer" class="flex-1 py-2.5 text-center rounded-xl bg-cobalt-50 text-cobalt-600 text-sm font-semibold">LinkedIn</a>
+                <a href="https://github.com/basha27" target="_blank" rel="noopener noreferrer" class="flex-1 py-2.5 text-center rounded-xl bg-slate-100 text-navy-900 text-sm font-semibold">GitHub</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section (Deep Executive Navy) -->
+    <section id="about" class="relative bg-navy-900 text-white overflow-hidden">
+        <!-- Subtle Architectural Grid Background -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#94A3B8 1px, transparent 1px); background-size: 28px 28px;"></div>
+        <div class="absolute top-0 right-0 -mr-24 -mt-24 w-96 h-96 rounded-full bg-cobalt-600/20 blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 -ml-24 -mb-24 w-80 h-80 rounded-full bg-gold-600/10 blur-3xl pointer-events-none"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 lg:py-24">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                <!-- Left Content -->
+                <div class="lg:col-span-8 space-y-6">
+                    <!-- Champagne Gold National Achievement Badge -->
+                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gold-600/15 border border-gold-500/40 text-gold-100 text-xs sm:text-sm font-semibold tracking-wide">
+                        <i class="fa-solid fa-trophy text-gold-500"></i>
+                        <span>Smart India Hackathon 2025 National Runner-Up</span>
+                    </div>
+
+                    <div class="space-y-3">
+                        <h1 class="font-display text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                            SK Sameer Basha
+                        </h1>
+                        <p class="text-lg sm:text-xl font-medium text-blue-300">
+                            B.Tech CSE (Data Engineering for AI &bull; Honours Through Innovation) &bull; K L University
+                        </p>
+                    </div>
+
+                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-3xl">
+                        Bridging <strong class="text-white font-semibold">Data Engineering, Real-Time Telemetry &amp; AI Pipelines</strong> with <strong class="text-white font-semibold">Product Strategy, Stakeholder Pitching &amp; Business Operations</strong>. Experienced in building end-to-end automated systems—from sensor telemetry and streaming analytics to AI-powered outreach workflows—and presenting high-impact solutions to national evaluation panels.
+                    </p>
+
+                    <!-- Direct Contact & Social Links Bar -->
+                    <div class="pt-2 flex flex-wrap items-center gap-3 sm:gap-4">
+                        <a href="#featured" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-cobalt-600 hover:bg-cobalt-700 text-white font-semibold text-sm shadow-lg shadow-cobalt-600/25 transition-all">
+                            <span>Explore Featured Work</span>
+                            <i class="fa-solid fa-arrow-down text-xs"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/sameerbashashaik07" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-navy-800 hover:bg-navy-700 text-white border border-slate-700 font-medium text-sm transition-all">
+                            <i class="fa-brands fa-linkedin text-blue-400"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/basha27" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-navy-800 hover:bg-navy-700 text-white border border-slate-700 font-medium text-sm transition-all">
+                            <i class="fa-brands fa-github text-slate-300"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <button onclick="copyText('sameerbashask2007@gmail.com', 'Email address copied!')" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-navy-800/70 hover:bg-navy-700 text-slate-200 border border-slate-700/80 font-medium text-sm transition-all">
+                            <i class="fa-regular fa-envelope text-gold-500"></i>
+                            <span>sameerbashask2007@gmail.com</span>
+                        </button>
+                    </div>
+
+                    <!-- Location & Phone Metadata -->
+                    <div class="pt-2 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs sm:text-sm text-slate-400">
+                        <span class="flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot text-cobalt-600"></i>
+                            Tenali, Andhra Pradesh, India
+                        </span>
+                        <button onclick="copyText('+91 8340881885', 'Phone number copied!')" class="flex items-center gap-2 hover:text-white transition-colors">
+                            <i class="fa-solid fa-phone text-cobalt-600"></i>
+                            +91 8340881885
+                        </button>
+                        <span class="flex items-center gap-2">
+                            <i class="fa-solid fa-graduation-cap text-gold-500"></i>
+                            2024 – 2028 Batch (0 Active Backlogs)
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Right Executive Metric Cards -->
+                <div class="lg:col-span-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-navy-800/80 backdrop-blur-sm border border-slate-700/80 p-5 rounded-2xl">
+                            <div class="text-gold-500 text-xs font-bold uppercase tracking-wider mb-1">National Recognition</div>
+                            <div class="font-display text-2xl sm:text-3xl font-extrabold text-white">SIH 2025</div>
+                            <div class="text-slate-300 text-xs sm:text-sm mt-1">National Runner-Up (Project SAHAJ)</div>
+                        </div>
+
+                        <div class="bg-navy-800/80 backdrop-blur-sm border border-slate-700/80 p-5 rounded-2xl">
+                            <div class="text-blue-400 text-xs font-bold uppercase tracking-wider mb-1">Academic Standing</div>
+                            <div class="font-display text-2xl sm:text-3xl font-extrabold text-white">8.53<span class="text-base font-normal text-slate-400">/10</span></div>
+                            <div class="text-slate-300 text-xs sm:text-sm mt-1">CGPA &bull; Honours Through Innovation</div>
+                        </div>
+
+                        <div class="bg-navy-800/80 backdrop-blur-sm border border-slate-700/80 p-5 rounded-2xl">
+                            <div class="text-blue-400 text-xs font-bold uppercase tracking-wider mb-1">Project Portfolio</div>
+                            <div class="font-display text-2xl sm:text-3xl font-extrabold text-white">9 Systems</div>
+                            <div class="text-slate-300 text-xs sm:text-sm mt-1">AI, Telemetry, Full-Stack &amp; Hardware</div>
+                        </div>
+
+                        <div class="bg-navy-800/80 backdrop-blur-sm border border-slate-700/80 p-5 rounded-2xl">
+                            <div class="text-emerald-400 text-xs font-bold uppercase tracking-wider mb-1">Industry Exposure</div>
+                            <div class="font-display text-2xl sm:text-3xl font-extrabold text-white">5 Simulations</div>
+                            <div class="text-slate-300 text-xs sm:text-sm mt-1">BCG X, Tata, Deloitte, British Airways</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Hero Project Spotlight (#1 Project SAHAJ) -->
+    <section id="featured" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 sm:-mt-10 relative z-10">
+        <div class="bg-white rounded-3xl shadow-xl border-2 border-gold-500/40 overflow-hidden">
+            <!-- Top Champagne Gold & Navy Accent Ribbon -->
+            <div class="bg-gradient-to-r from-navy-900 via-navy-800 to-navy-900 px-6 sm:px-8 py-3.5 flex flex-wrap items-center justify-between gap-2 border-b border-gold-500/30">
+                <div class="flex items-center gap-2.5">
+                    <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gold-500 text-navy-900 font-bold text-xs">
+                        #1
+                    </span>
+                    <span class="text-gold-100 font-display font-bold text-xs sm:text-sm uppercase tracking-wider">
+                        Flagship National Award-Winning Innovation &bull; Featured Spotlight
+                    </span>
+                </div>
+                <span class="text-xs font-medium text-slate-300 bg-navy-950/60 px-3 py-1 rounded-full border border-slate-700">
+                    Sep 2025 – Present
+                </span>
+            </div>
+
+            <div class="p-6 sm:p-8 lg:p-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <!-- Left Narrative -->
+                    <div class="lg:col-span-8 space-y-5">
+                        <div class="flex flex-wrap items-center gap-2.5">
+                            <span class="px-3 py-1 rounded-full bg-gold-50 text-gold-600 border border-gold-500/30 text-xs font-bold">
+                                <i class="fa-solid fa-award mr-1"></i> SIH 2025 National Runner-Up
+                            </span>
+                            <span class="px-3 py-1 rounded-full bg-cobalt-50 text-cobalt-600 border border-cobalt-600/20 text-xs font-semibold">
+                                <i class="fa-solid fa-microphone-lines mr-1"></i> Bharatiya Vigyan Sammelan Presenter
+                            </span>
+                            <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold">
+                                IoT Telemetry &amp; Product Pitching
+                            </span>
+                        </div>
+
+                        <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy-900 tracking-tight">
+                            Project SAHAJ — Smart Automated Natural Dyeing System
+                        </h2>
+
+                        <p class="text-slate-600 text-base leading-relaxed">
+                            Engineered an end-to-end hardware-software automated extraction and dyeing unit powered by <strong>Raspberry Pi 4B</strong>, industrial IoT sensors, and solid-state relays. Designed real-time multi-sensor telemetry ingestion, signal noise filtering, and live performance monitoring dashboards while leading national-level business pitching, concept note authoring, and live stakeholder demonstrations.
+                        </p>
+
+                        <!-- Key Dual-Track Highlights -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
+                            <div class="p-4 rounded-2xl bg-alabaster border border-slate-200/80">
+                                <div class="text-xs font-bold uppercase tracking-wider text-cobalt-600 mb-1">Technical &amp; Telemetry Core</div>
+                                <p class="text-sm text-slate-700">Real-time temperature, pH &amp; flow telemetry filtering, automated relay control, and live anomaly alerts.</p>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-alabaster border border-slate-200/80">
+                                <div class="text-xs font-bold uppercase tracking-wider text-gold-600 mb-1">Business &amp; Pitch Leadership</div>
+                                <p class="text-sm text-slate-700">Authored executive concept notes, value propositions, and pitched live to SIH 2025 &amp; BVS National Conference panels.</p>
+                            </div>
+                        </div>
+
+                        <!-- Tech Tags -->
+                        <div class="flex flex-wrap gap-2 pt-1">
+                            <span class="px-3 py-1 rounded-lg bg-navy-900 text-white text-xs font-medium">Raspberry Pi 4B</span>
+                            <span class="px-3 py-1 rounded-lg bg-slate-100 text-navy-800 text-xs font-medium">Python</span>
+                            <span class="px-3 py-1 rounded-lg bg-slate-100 text-navy-800 text-xs font-medium">IoT Sensor Telemetry</span>
+                            <span class="px-3 py-1 rounded-lg bg-slate-100 text-navy-800 text-xs font-medium">Signal Filtering</span>
+                            <span class="px-3 py-1 rounded-lg bg-slate-100 text-navy-800 text-xs font-medium">Solid-State Relays</span>
+                            <span class="px-3 py-1 rounded-lg bg-slate-100 text-navy-800 text-xs font-medium">Stakeholder Pitching</span>
+                        </div>
+                    </div>
+
+                    <!-- Right Action Panel -->
+                    <div class="lg:col-span-4 bg-alabaster rounded-2xl p-6 border border-slate-200 space-y-5">
+                        <div class="space-y-2">
+                            <div class="text-xs font-bold uppercase tracking-wider text-slate-500">Impact Summary</div>
+                            <ul class="space-y-2.5 text-sm text-slate-700">
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-gold-600 mt-1"></i>
+                                    <span><strong>National Runner-Up</strong> among thousands of teams at Smart India Hackathon 2025.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-cobalt-600 mt-1"></i>
+                                    <span>Selected presenter at <strong>Bharatiya Vigyan Sammelan</strong> National Conference.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-cobalt-600 mt-1"></i>
+                                    <span>Standardized natural dye extraction quality with automated closed-loop sensor feedback.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="space-y-2.5 pt-2">
+                            <button onclick="openProjectModal(1)" class="w-full py-3.5 px-5 rounded-xl bg-navy-900 hover:bg-cobalt-600 text-white font-semibold text-sm shadow-sm transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-file-lines"></i>
+                                <span>View Full Case Study</span>
+                            </button>
+                            <a href="https://github.com/basha27" target="_blank" rel="noopener noreferrer" class="w-full py-3 px-5 rounded-xl bg-white hover:bg-slate-50 text-navy-900 border border-slate-300 font-semibold text-sm transition-all flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-github"></i>
+                                <span>View Repository on GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All 9 Projects Section with Interactive Category Filters -->
+    <section id="projects" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+            <div class="space-y-2">
+                <span class="text-xs font-bold uppercase tracking-widest text-cobalt-600">Complete Engineering &amp; Business Portfolio</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">
+                    All 9 Ranked Projects
+                </h2>
+                <p class="text-slate-600 text-sm sm:text-base max-w-2xl">
+                    Ordered by executive and technical impact—spanning national award-winning hardware telemetry, AI outreach automation, real-time data pipelines, and enterprise platforms.
+                </p>
+            </div>
+
+            <!-- Interactive Filter Tabs -->
+            <div id="filter-bar" class="flex flex-wrap gap-2 bg-white p-1.5 rounded-2xl border border-slate-200 shadow-sm">
+                <button data-filter="all" class="filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-navy-900 text-white transition-all">
+                    All Projects (9)
+                </button>
+                <button data-filter="business" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 hover:text-navy-900 hover:bg-slate-100 transition-all">
+                    Featured &amp; Business
+                </button>
+                <button data-filter="data" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 hover:text-navy-900 hover:bg-slate-100 transition-all">
+                    Data &amp; AI Pipelines
+                </button>
+                <button data-filter="fullstack" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 hover:text-navy-900 hover:bg-slate-100 transition-all">
+                    Full-Stack &amp; Hardware
+                </button>
+            </div>
+        </div>
+
+        <!-- Projects Grid Container -->
+        <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <!-- Populated dynamically via JavaScript for clean single-source truth -->
+        </div>
+    </section>
+
+    <!-- Experience, Industry Job Simulations & Credentials -->
+    <section id="credentials" class="bg-white border-t border-slate-200 py-16 sm:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+            
+            <!-- Section Header -->
+            <div class="max-w-3xl space-y-2">
+                <span class="text-xs font-bold uppercase tracking-widest text-cobalt-600">Verified Track Record</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">
+                    Experience, Industry Simulations &amp; Credentials
+                </h2>
+                <p class="text-slate-600 text-sm sm:text-base">
+                    Practical internship experience, 5 virtual industry job simulations with global consulting &amp; enterprise leaders, and verified cloud, AI, and leadership credentials.
+                </p>
+            </div>
+
+            <!-- Internships & Academic Foundation Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Virtual & Field Internships -->
+                <div class="space-y-6">
+                    <h3 class="font-display text-xl font-bold text-navy-900 flex items-center gap-2.5">
+                        <span class="w-8 h-8 rounded-lg bg-cobalt-50 text-cobalt-600 flex items-center justify-center text-sm">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </span>
+                        <span>Internship Experience</span>
+                    </h3>
+
+                    <div class="space-y-4">
+                        <!-- Internship 1 -->
+                        <div class="p-6 rounded-2xl bg-alabaster border border-slate-200/90 space-y-3">
+                            <div class="flex flex-wrap items-start justify-between gap-2">
+                                <div>
+                                    <h4 class="font-display font-bold text-navy-900 text-base sm:text-lg">Business Analyst Virtual Internship</h4>
+                                    <p class="text-sm font-medium text-cobalt-600">EduSkills / AICTE / Celonis &bull; Virtual</p>
+                                </div>
+                                <span class="px-3 py-1 rounded-full bg-white border border-slate-200 text-xs font-semibold text-slate-700">
+                                    Apr 2026 – Jun 2026
+                                </span>
+                            </div>
+                            <ul class="space-y-1.5 text-sm text-slate-600 list-disc pl-4">
+                                <li>Executed end-to-end business process analysis and process intelligence to detect operational bottlenecks and workflow improvements.</li>
+                                <li>Synthesized system KPIs and engagement metrics into clear visual reports and structured executive documentation.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Internship 2 -->
+                        <div class="p-6 rounded-2xl bg-alabaster border border-slate-200/90 space-y-3">
+                            <div class="flex flex-wrap items-start justify-between gap-2">
+                                <div>
+                                    <h4 class="font-display font-bold text-navy-900 text-base sm:text-lg">Smart Village Program — Field &amp; Community Intern</h4>
+                                    <p class="text-sm font-medium text-cobalt-600">K L University (KL SAC) &bull; Andhra Pradesh</p>
+                                </div>
+                                <span class="px-3 py-1 rounded-full bg-white border border-slate-200 text-xs font-semibold text-slate-700">
+                                    Social &amp; Outreach Internship
+                                </span>
+                            </div>
+                            <ul class="space-y-1.5 text-sm text-slate-600 list-disc pl-4">
+                                <li>Led rural field outreach and direct stakeholder interviews to assess local infrastructure and community development needs.</li>
+                                <li>Maintained structured field records and drafted clear analytical summaries for regional development planning.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education & Core Certifications -->
+                <div class="space-y-6">
+                    <h3 class="font-display text-xl font-bold text-navy-900 flex items-center gap-2.5">
+                        <span class="w-8 h-8 rounded-lg bg-gold-50 text-gold-600 flex items-center justify-center text-sm">
+                            <i class="fa-solid fa-certificate"></i>
+                        </span>
+                        <span>Education &amp; Verified Certifications</span>
+                    </h3>
+
+                    <!-- Education Card -->
+                    <div class="p-6 rounded-2xl bg-navy-900 text-white space-y-4">
+                        <div class="flex flex-wrap items-start justify-between gap-2">
+                            <div>
+                                <div class="text-xs font-bold uppercase tracking-wider text-gold-500">2024 – 2028 &bull; Honours Through Innovation</div>
+                                <h4 class="font-display font-bold text-lg mt-0.5">B.Tech in Computer Science &amp; Engineering</h4>
+                                <p class="text-sm text-slate-300">K L University, Andhra Pradesh &bull; Specialization: Data Engineering for AI</p>
+                            </div>
+                            <span class="px-3.5 py-1.5 rounded-xl bg-gold-600 text-white font-display font-bold text-sm">
+                                CGPA: 8.53/10
+                            </span>
+                        </div>
+                        <div class="pt-3 border-t border-slate-700/80 grid grid-cols-2 gap-4 text-xs text-slate-300">
+                            <div>
+                                <span class="text-slate-400 block">Intermediate (Class XII)</span>
+                                <strong class="text-white">NRI Junior College &bull; 72%</strong>
+                            </div>
+                            <div>
+                                <span class="text-slate-400 block">Secondary School (SSC)</span>
+                                <strong class="text-white">NSSM High School &bull; 79.67%</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certifications Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div class="p-4 rounded-xl bg-alabaster border border-slate-200 flex items-start gap-3">
+                            <i class="fa-brands fa-aws text-gold-600 text-lg mt-0.5"></i>
+                            <div>
+                                <div class="text-sm font-bold text-navy-900">AWS Certified Cloud Practitioner</div>
+                                <div class="text-xs text-slate-500">Amazon Web Services &amp; Cloud Foundations</div>
+                            </div>
+                        </div>
+                        <div class="p-4 rounded-xl bg-alabaster border border-slate-200 flex items-start gap-3">
+                            <i class="fa-solid fa-brain text-cobalt-600 text-base mt-0.5"></i>
+                            <div>
+                                <div class="text-sm font-bold text-navy-900">IBM Machine Learning</div>
+                                <div class="text-xs text-slate-500">Professional Certificate (Coursera)</div>
+                            </div>
+                        </div>
+                        <div class="p-4 rounded-xl bg-alabaster border border-slate-200 flex items-start gap-3">
+                            <i class="fa-solid fa-diagram-project text-cobalt-600 text-base mt-0.5"></i>
+                            <div>
+                                <div class="text-sm font-bold text-navy-900">Scrum Fundamentals (SFC)</div>
+                                <div class="text-xs text-slate-500">Agile Sprint &amp; Team Workflow Management</div>
+                            </div>
+                        </div>
+                        <div class="p-4 rounded-xl bg-alabaster border border-slate-200 flex items-start gap-3">
+                            <i class="fa-solid fa-shield-halved text-gold-600 text-base mt-0.5"></i>
+                            <div>
+                                <div class="text-sm font-bold text-navy-900">NCC 'A' Certificate</div>
+                                <div class="text-xs text-slate-500">National Cadet Corps Leadership Training</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5 Forage Industry Job Simulations Banner -->
+            <div class="space-y-6">
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                    <h3 class="font-display text-xl font-bold text-navy-900 flex items-center gap-2.5">
+                        <span class="w-8 h-8 rounded-lg bg-navy-900 text-white flex items-center justify-center text-sm">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </span>
+                        <span>Industry Job Simulations — Forage (5 Completed)</span>
+                    </h3>
+                    <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">2026 Virtual Industry Programs</span>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                    <div class="p-5 rounded-2xl bg-alabaster border border-slate-200 hover:border-cobalt-600/40 transition-colors space-y-2">
+                        <div class="text-xs font-bold uppercase tracking-wider text-cobalt-600">BCG X</div>
+                        <h4 class="font-display font-bold text-navy-900 text-sm">Introduction to Data for Decision Makers</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">Campaign performance trend analysis and strategic outreach recommendations.</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-alabaster border border-slate-200 hover:border-cobalt-600/40 transition-colors space-y-2">
+                        <div class="text-xs font-bold uppercase tracking-wider text-cobalt-600">Tata Group</div>
+                        <h4 class="font-display font-bold text-navy-900 text-sm">Data Visualisation: Effective Business Insights</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">Executive dashboard design and communicating strategic insights to stakeholders.</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-alabaster border border-slate-200 hover:border-cobalt-600/40 transition-colors space-y-2">
+                        <div class="text-xs font-bold uppercase tracking-wider text-cobalt-600">Tata Group</div>
+                        <h4 class="font-display font-bold text-navy-900 text-sm">GenAI Powered Data Analytics</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">Client risk profiling, predictive trend reporting, and AI-assisted communication.</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-alabaster border border-slate-200 hover:border-cobalt-600/40 transition-colors space-y-2">
+                        <div class="text-xs font-bold uppercase tracking-wider text-cobalt-600">Deloitte</div>
+                        <h4 class="font-display font-bold text-navy-900 text-sm">Data Analytics Job Simulation</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">Structured dataset auditing, forensic analysis, and operational anomaly detection.</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-alabaster border border-slate-200 hover:border-cobalt-600/40 transition-colors space-y-2">
+                        <div class="text-xs font-bold uppercase tracking-wider text-cobalt-600">British Airways</div>
+                        <h4 class="font-display font-bold text-navy-900 text-sm">Data Science Job Simulation</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">Customer buying behavior segmentation and predictive acquisition modeling.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Executive Footer & Direct Contact -->
+    <footer id="contact" class="bg-navy-950 text-white border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center pb-12 border-b border-slate-800">
+                <div class="lg:col-span-7 space-y-3">
+                    <span class="text-xs font-bold uppercase tracking-widest text-gold-500">Open to Internships &amp; Collaborations</span>
+                    <h2 class="font-display text-2xl sm:text-4xl font-extrabold tracking-tight">
+                        Let’s Build Data-Driven &amp; High-Impact Solutions
+                    </h2>
+                    <p class="text-slate-400 text-sm sm:text-base max-w-2xl">
+                        Available for internships in <strong class="text-slate-200">Data Engineering, Telemetry &amp; AI Analytics</strong> as well as <strong class="text-slate-200">Business Development, Product Strategy &amp; Growth Operations</strong>.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col gap-3">
+                    <button onclick="copyText('sameerbashask2007@gmail.com', 'Email address copied to clipboard!')" class="w-full px-5 py-3.5 rounded-xl bg-navy-900 hover:bg-navy-800 border border-slate-700 text-left flex items-center justify-between group transition-all">
+                        <div class="flex items-center gap-3">
+                            <span class="w-9 h-9 rounded-lg bg-cobalt-600/20 text-blue-400 flex items-center justify-center">
+                                <i class="fa-solid fa-envelope"></i>
+                            </span>
+                            <div>
+                                <div class="text-[11px] text-slate-400 uppercase font-semibold">Email (Click to Copy)</div>
+                                <div class="text-sm font-semibold text-white">sameerbashask2007@gmail.com</div>
+                            </div>
+                        </div>
+                        <i class="fa-regular fa-copy text-slate-400 group-hover:text-white transition-colors"></i>
+                    </button>
+
+                    <button onclick="copyText('+91 8340881885', 'Phone number copied to clipboard!')" class="w-full px-5 py-3.5 rounded-xl bg-navy-900 hover:bg-navy-800 border border-slate-700 text-left flex items-center justify-between group transition-all">
+                        <div class="flex items-center gap-3">
+                            <span class="w-9 h-9 rounded-lg bg-gold-600/20 text-gold-500 flex items-center justify-center">
+                                <i class="fa-solid fa-phone"></i>
+                            </span>
+                            <div>
+                                <div class="text-[11px] text-slate-400 uppercase font-semibold">Phone / WhatsApp (Click to Copy)</div>
+                                <div class="text-sm font-semibold text-white">+91 8340881885</div>
+                            </div>
+                        </div>
+                        <i class="fa-regular fa-copy text-slate-400 group-hover:text-white transition-colors"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+                <div>
+                    &copy; 2026 <strong class="text-slate-200">SK Sameer Basha</strong> &bull; Tenali, Andhra Pradesh, India. All rights reserved.
+                </div>
+                <div class="flex items-center gap-5">
+                    <a href="https://www.linkedin.com/in/sameerbashashaik07" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-1.5">
+                        <i class="fa-brands fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/basha27" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-1.5">
+                        <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+                    <a href="mailto:sameerbashask2007@gmail.com" class="hover:text-white transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-paper-plane"></i> Send Direct Mail
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Case Study Modal -->
+    <div id="project-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 bg-navy-950/75 backdrop-blur-sm transition-opacity" aria-modal="true" role="dialog">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 transform transition-all">
+            <!-- Modal Header -->
+            <div class="sticky top-0 bg-navy-900 text-white px-6 py-5 flex items-start justify-between gap-4 z-10">
+                <div>
+                    <div class="flex items-center gap-2 mb-1">
+                        <span id="modal-rank" class="px-2.5 py-0.5 rounded-md bg-gold-600 text-white font-bold text-xs">#1</span>
+                        <span id="modal-badge" class="text-xs font-semibold text-blue-300 uppercase tracking-wider">Category</span>
+                    </div>
+                    <h3 id="modal-title" class="font-display text-xl sm:text-2xl font-bold text-white leading-snug">Project Title</h3>
+                </div>
+                <button onclick="closeProjectModal()" class="p-2 rounded-xl bg-navy-800 hover:bg-navy-700 text-slate-300 hover:text-white transition-colors" aria-label="Close Modal">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="p-6 sm:p-8 space-y-6">
+                <!-- Problem Statement -->
+                <div class="space-y-1.5">
+                    <div class="text-xs font-bold uppercase tracking-wider text-cobalt-600 flex items-center gap-2">
+                        <i class="fa-solid fa-bullseye"></i> Problem Statement
+                    </div>
+                    <p id="modal-problem" class="text-sm sm:text-base text-slate-700 leading-relaxed"></p>
+                </div>
+
+                <!-- Solution Architecture -->
+                <div class="space-y-1.5">
+                    <div class="text-xs font-bold uppercase tracking-wider text-navy-900 flex items-center gap-2">
+                        <i class="fa-solid fa-layer-group"></i> Solution Architecture &amp; Execution
+                    </div>
+                    <p id="modal-architecture" class="text-sm sm:text-base text-slate-700 leading-relaxed"></p>
+                </div>
+
+                <!-- Business & Technical Impact -->
+                <div class="p-4 sm:p-5 rounded-2xl bg-alabaster border border-slate-200 space-y-2">
+                    <div class="text-xs font-bold uppercase tracking-wider text-gold-600 flex items-center gap-2">
+                        <i class="fa-solid fa-chart-line"></i> Key Business &amp; Technical Impact
+                    </div>
+                    <ul id="modal-impact" class="space-y-2 text-sm text-slate-700 list-disc pl-5"></ul>
+                </div>
+
+                <!-- Tech Stack -->
+                <div class="space-y-2">
+                    <div class="text-xs font-bold uppercase tracking-wider text-slate-500">Technologies &amp; Skills Used</div>
+                    <div id="modal-tech" class="flex flex-wrap gap-2"></div>
+                </div>
+
+                <!-- Modal Footer Actions -->
+                <div class="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-end gap-3">
+                    <button onclick="closeProjectModal()" class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-sm transition-colors">
+                        Close
+                    </button>
+                    <a href="https://github.com/basha27" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-navy-900 hover:bg-cobalt-600 text-white font-semibold text-sm transition-colors flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-github"></i>
+                        <span>View on GitHub (basha27)</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Application Data & Interactive Logic -->
+    <script>
+        // Master Repository of All 9 Ranked Projects
+        const projectsData = [
+            {
+                id: 1,
+                rank: "#1",
+                title: "Project SAHAJ — Smart Automated Natural Dyeing System",
+                subtitle: "Smart India Hackathon 2025 National Runner-Up",
+                categories: ["business", "data", "fullstack"],
+                badge: "Flagship Innovation • National Runner-Up",
+                isFeatured: true,
+                summary: "Automated natural dye extraction and fabric dyeing prototype using Raspberry Pi 4B, real-time IoT sensor telemetry, and closed-loop relay control—presented at SIH 2025 & Bharatiya Vigyan Sammelan.",
+                problem: "Traditional natural dyeing suffers from inconsistent temperature control, manual monitoring errors, and poor batch repeatability, limiting commercial scalability for sustainable textile producers.",
+                architecture: "Built an automated hardware-software system driven by Raspberry Pi 4B, industrial temperature/pH sensors, and solid-state relays. Developed Python telemetry pipelines for signal noise filtering, threshold anomaly alerts, and live operational monitoring dashboards.",
+                impact: [
+                    "Awarded National Runner-Up at Smart India Hackathon (SIH) 2025 after multi-round technical and business pitching.",
+                    "Selected to present research architecture and commercial impact at the Bharatiya Vigyan Sammelan National Conference.",
+                    "Automated extraction precision and repeatable batch consistency with real-time sensor telemetry."
+                ],
+                tech: ["Raspberry Pi 4B", "Python", "IoT Sensors", "Signal Filtering", "Solid-State Relays", "Product Pitching"]
+            },
+            {
+                id: 2,
+                rank: "#2",
+                title: "AI Email Automation & Excel Lead Tracking System",
+                subtitle: "Automated Outreach & CRM Workflow",
+                categories: ["business", "data"],
+                badge: "Business & AI Automation",
+                isFeatured: false,
+                summary: "End-to-end automated communication pipeline that reads incoming prospect emails, drafts context-aware AI responses, and logs structured lead records directly into Excel spreadsheets.",
+                problem: "High-volume business outreach and client follow-ups require rapid, personalized email responses while maintaining clean, up-to-date lead tracking spreadsheets without manual data entry delays.",
+                architecture: "Engineered an automated workflow using Python and LLM APIs to parse incoming email threads, classify intent, generate tailored professional replies, and append timestamped lead status, contact details, and response logs into structured Excel workbooks.",
+                impact: [
+                    "Eliminated repetitive manual lead logging by automatically structuring email interactions into Excel trackers.",
+                    "Accelerated prospect response turnaround with consistent, context-aware AI draft generation.",
+                    "Improved follow-up visibility and pipeline organization for business development workflows."
+                ],
+                tech: ["Python", "GenAI / LLM Integration", "Email Automation", "Excel / OpenPyXL", "Lead Tracking", "Workflow Scripting"]
+            },
+            {
+                id: 3,
+                rank: "#3",
+                title: "Real-Time Stock Market Data Pipeline",
+                subtitle: "High-Frequency Streaming & Time-Series Analytics",
+                categories: ["data"],
+                badge: "Streaming Data Engineering",
+                isFeatured: false,
+                summary: "Distributed streaming analytics pipeline ingesting live market ticks via Apache Kafka and Spark to compute moving averages, volatility trends, and real-time anomaly indicators in PostgreSQL.",
+                problem: "Financial and telemetry data streams require low-latency ingestion and continuous time-series transformation to detect sudden trend shifts and anomalies before actionable windows close.",
+                architecture: "Designed a decoupled producer-consumer streaming pipeline using Python, Apache Kafka, and Apache Spark Structured Streaming. Computed rolling moving averages and statistical anomaly flags in flight before persisting structured time-series tables into PostgreSQL.",
+                impact: [
+                    "Processed continuous high-frequency time-series event streams with fault-tolerant Kafka message brokering.",
+                    "Automated calculation of rolling moving averages and real-time volume/price anomaly indicators.",
+                    "Enabled fast SQL analytical querying over structured historical and live market snapshots."
+                ],
+                tech: ["Python", "Apache Kafka", "Apache Spark", "PostgreSQL", "Time-Series Analysis", "ETL Pipelines"]
+            },
+            {
+                id: 4,
+                rank: "#4",
+                title: "Smart Campus Predictive Analytics & KPI Dashboard",
+                subtitle: "Student Performance & Early-Risk Modeling",
+                categories: ["business", "data"],
+                badge: "Predictive Analytics & BI",
+                isFeatured: false,
+                summary: "Data analytics and machine learning solution analyzing attendance, academic scores, and placement metrics to surface actionable KPIs and early-intervention risk patterns.",
+                problem: "Academic administrators lacked unified visibility across fragmented attendance, exam, and placement records, making it difficult to identify at-risk students early.",
+                architecture: "Integrated multi-table student records in PostgreSQL, engineered behavioral and academic features in Python (Pandas, Scikit-learn), and built classification models paired with interactive Power BI executive dashboards.",
+                impact: [
+                    "Unified attendance, academic performance, and placement readiness into clear executive KPI views.",
+                    "Identified early academic risk patterns to support timely faculty and mentoring interventions.",
+                    "Translated complex multi-dimensional student datasets into intuitive visual reports."
+                ],
+                tech: ["Python", "PostgreSQL", "Scikit-learn", "Power BI", "Predictive Modeling", "SQL"]
+            },
+            {
+                id: 5,
+                rank: "#5",
+                title: "FoodLink — Food Redistribution Platform",
+                subtitle: "Multi-Stakeholder Social Impact Web Platform",
+                categories: ["business", "fullstack"],
+                badge: "Full-Stack & Stakeholder Platform",
+                isFeatured: false,
+                summary: "Full-stack coordination platform connecting surplus-food donors (events, restaurants) with verified volunteers and recipient organizations including orphanages and old-age homes.",
+                problem: "Significant edible surplus food goes wasted due to the lack of real-time coordination between food donors, pickup volunteers, and local shelters.",
+                architecture: "Architected a responsive React.js frontend backed by Spring Boot REST APIs to manage donor listings, volunteer pickup assignments, delivery status tracking, and recipient organization directories.",
+                impact: [
+                    "Streamlined end-to-end coordination across three stakeholder groups: donors, volunteers, and recipient shelters.",
+                    "Reduced pickup coordination friction through structured status tracking and transparent availability listings.",
+                    "Designed scalable role-based workflows suitable for community and NGO partnerships."
+                ],
+                tech: ["React.js", "Spring Boot", "Java", "REST APIs", "Stakeholder Coordination", "Full-Stack"]
+            },
+            {
+                id: 6,
+                rank: "#6",
+                title: "SmartSpend — Personal Expense Data Pipeline",
+                subtitle: "Automated Financial ETL & Trend Analytics",
+                categories: ["data"],
+                badge: "Data Cleaning & ETL",
+                isFeatured: false,
+                summary: "Automated Python and MySQL data pipeline that cleans raw transaction logs, categorizes expenses, and visualizes monthly spending trends and budget variances.",
+                problem: "Unstructured personal transaction logs across payment modes make it difficult to track category-wise spending habits and control recurring expenses.",
+                architecture: "Developed modular Python ETL scripts using Pandas to standardize raw transaction records, rule-classify spending categories, load cleaned datasets into MySQL, and generate Matplotlib visual breakdowns.",
+                impact: [
+                    "Automated cleaning and normalization of raw, inconsistent financial transaction records.",
+                    "Uncovered category-wise spending patterns and seasonal budget variances through visual analytics.",
+                    "Established a repeatable relational schema in MySQL for longitudinal expense tracking."
+                ],
+                tech: ["Python", "Pandas", "MySQL", "Matplotlib", "Data Cleaning", "ETL"]
+            },
+            {
+                id: 7,
+                rank: "#7",
+                title: "Student Expense Analysis Database",
+                subtitle: "Relational Schema & Analytical SQL Reporting",
+                categories: ["data"],
+                badge: "Database Design & SQL",
+                isFeatured: false,
+                summary: "Normalized relational database system engineered to organize student financial records and execute complex analytical SQL queries for category-wise trend discovery.",
+                problem: "Ad-hoc spreadsheet tracking leads to data redundancy, update anomalies, and slow aggregation when analyzing multi-semester student spending behavior.",
+                architecture: "Designed a normalized relational schema (3NF) with strict referential integrity constraints and authored complex SQL queries utilizing joins, window functions, and aggregations to extract spending insights.",
+                impact: [
+                    "Eliminated data redundancy via normalized relational table structures and indexed lookup keys.",
+                    "Delivered fast, accurate category-wise and monthly expenditure summaries using analytical SQL.",
+                    "Demonstrated strong DBMS fundamentals in schema modeling and query optimization."
+                ],
+                tech: ["SQL", "PostgreSQL / MySQL", "Database Design (DBMS)", "Data Analysis", "Query Optimization"]
+            },
+            {
+                id: 8,
+                rank: "#8",
+                title: "Smart Parking Management System",
+                subtitle: "Enterprise Microservices & Automated Billing",
+                categories: ["fullstack"],
+                badge: "Backend Microservices",
+                isFeatured: false,
+                summary: "Modular Java and Spring Boot microservices application managing real-time parking slot availability, advance reservations, entry/exit logging, and automated fee calculation.",
+                problem: "Manual parking lot management causes congestion, inaccurate slot availability visibility, and billing bottlenecks during peak hours.",
+                architecture: "Built decoupled Spring Boot microservices handling slot inventory, user reservations, and dynamic duration-based billing calculations with clean RESTful service contracts.",
+                impact: [
+                    "Enabled real-time slot availability tracking and conflict-free advance reservations.",
+                    "Automated entry-to-exit duration calculation and transparent billing workflows.",
+                    "Applied modular microservice architecture principles for maintainable backend scaling."
+                ],
+                tech: ["Java", "Spring Boot", "Microservices", "REST APIs", "SQL", "System Design"]
+            },
+            {
+                id: 9,
+                rank: "#9",
+                title: "Wireless EV Vehicle Charger",
+                subtitle: "Resonant Inductive Power Transfer Prototype",
+                categories: ["fullstack"],
+                badge: "Hardware & Electrical Prototyping",
+                isFeatured: false,
+                summary: "Tesla-coil-based resonant wireless power transfer prototype demonstrating contactless energy transmission principles for electric vehicle charging applications.",
+                problem: "Physical plug-in EV charging connectors experience mechanical wear and operational friction in automated or high-frequency fleet environments.",
+                architecture: "Designed and assembled primary transmitter and secondary receiver resonant coils, tuning circuit frequency and coil alignment to demonstrate contactless power delivery to a load indicator.",
+                impact: [
+                    "Successfully demonstrated contactless wireless energy transfer across an air gap.",
+                    "Validated coil alignment and resonance tuning principles for EV charging use cases.",
+                    "Strengthened hands-on hardware prototyping and cross-disciplinary engineering skills."
+                ],
+                tech: ["Hardware Prototyping", "Electrical Engineering", "Wireless Power Transfer", "Circuit Design"]
+            }
+        ];
+
+        // Render Project Cards
+        const gridEl = document.getElementById('projects-grid');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+
+        function renderProjects(filter = 'all') {
+            gridEl.innerHTML = '';
+            
+            const filtered = filter === 'all' 
+                ? projectsData 
+                : projectsData.filter(p => p.categories.includes(filter));
+
+            filtered.forEach(project => {
+                const isTopRank = project.id === 1;
+                const borderClass = isTopRank 
+                    ? 'border-gold-500/60 ring-1 ring-gold-500/20' 
+                    : 'border-slate-200/90 hover:border-cobalt-600/40';
+                const rankBg = isTopRank 
+                    ? 'bg-gold-600 text-white' 
+                    : 'bg-navy-900 text-white';
+
+                const techPills = project.tech.slice(0, 4).map(t => 
+                    `<span class="px-2.5 py-1 rounded-md bg-slate-100 text-navy-800 text-xs font-medium">${t}</span>`
+                ).join('');
+
+                const cardHTML = `
+                    <article class="bg-white rounded-2xl border ${borderClass} p-6 flex flex-col justify-between card-hover shadow-sm">
+                        <div class="space-y-4">
+                            <!-- Top Row: Rank & Category Badge -->
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="inline-flex items-center justify-center px-2.5 py-1 rounded-lg ${rankBg} font-display font-bold text-xs">
+                                    ${project.rank}
+                                </span>
+                                <span class="text-xs font-semibold ${isTopRank ? 'text-gold-600 bg-gold-50' : 'text-cobalt-600 bg-cobalt-50'} px-3 py-1 rounded-full">
+                                    ${project.badge}
+                                </span>
+                            </div>
+
+                            <!-- Title & Subtitle -->
+                            <div>
+                                <h3 class="font-display text-lg sm:text-xl font-bold text-navy-900 leading-snug">
+                                    ${project.title}
+                                </h3>
+                                <p class="text-xs font-semibold text-slate-500 mt-1">${project.subtitle}</p>
+                            </div>
+
+                            <!-- Summary -->
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                ${project.summary}
+                            </p>
+                        </div>
+
+                        <div class="pt-5 mt-5 border-t border-slate-100 space-y-4">
+                            <!-- Tech Tags -->
+                            <div class="flex flex-wrap gap-1.5">
+                                ${techPills}
+                            </div>
+
+                            <!-- Card Buttons -->
+                            <div class="flex items-center gap-2.5">
+                                <button onclick="openProjectModal(${project.id})" class="flex-1 py-2.5 px-4 rounded-xl bg-navy-900 hover:bg-cobalt-600 text-white text-xs sm:text-sm font-semibold transition-colors flex items-center justify-center gap-2">
+                                    <span>View Case Study</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[11px]"></i>
+                                </button>
+                                <a href="https://github.com/basha27" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-navy-900 transition-colors" title="View on GitHub">
+                                    <i class="fa-brands fa-github text-base"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                `;
+                gridEl.insertAdjacentHTML('beforeend', cardHTML);
+            });
+        }
+
+        // Filter Button Click Handling
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-navy-900', 'text-white');
+                    b.classList.add('text-slate-600', 'hover:text-navy-900', 'hover:bg-slate-100');
+                });
+                btn.classList.add('active', 'bg-navy-900', 'text-white');
+                btn.classList.remove('text-slate-600', 'hover:text-navy-900', 'hover:bg-slate-100');
+                
+                renderProjects(btn.dataset.filter);
+            });
+        });
+
+        // Case Study Modal Logic
+        const modal = document.getElementById('project-modal');
+
+        function openProjectModal(projectId) {
+            const project = projectsData.find(p => p.id === projectId);
+            if (!project) return;
+
+            document.getElementById('modal-rank').textContent = project.rank;
+            document.getElementById('modal-badge').textContent = project.badge;
+            document.getElementById('modal-title').textContent = project.title;
+            document.getElementById('modal-problem').textContent = project.problem;
+            document.getElementById('modal-architecture').textContent = project.architecture;
+
+            document.getElementById('modal-impact').innerHTML = project.impact
+                .map(item => `<li>${item}</li>`)
+                .join('');
+
+            document.getElementById('modal-tech').innerHTML = project.tech
+                .map(t => `<span class="px-3 py-1 rounded-lg bg-navy-900 text-white text-xs font-medium">${t}</span>`)
+                .join('');
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProjectModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal on backdrop click or Escape key
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeProjectModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeProjectModal();
+            }
+        });
+
+        // Mobile Navigation Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // Reliable Clipboard Copy with Toast Notification
+        let toastTimeout;
+        function copyText(text, message) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand('copy');
+                showToast(message);
+            } catch (err) {
+                showToast('Unable to copy automatically');
+            }
+            document.body.removeChild(textarea);
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').textContent = message;
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 3000);
+        }
+
+        // Initial Render
+        renderProjects('all');
+    </script>
+</body>
+</html>
